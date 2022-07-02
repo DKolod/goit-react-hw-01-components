@@ -1,28 +1,28 @@
 import PropTypes from 'prop-types';
-// import css from './ProfileCss.module.css';
+import css from './ProfileCss.module.css';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div>
-      <div>
-        <img src={avatar} alt={username} />
-        <p>{username}</p>
-        <p>{tag}</p>
-        <p>{location}</p>
+    <div className={css.profile}>
+      <div className={css.description}>
+        <img className={css.avatar} src={avatar} alt={username} />
+        <p className={css.name}>{username}</p>
+        <p className={css.tag}>@{tag}</p>
+        <p className={css.location}>{location}</p>
       </div>
 
-      <ul>
-        <li>
-          <span>Followers</span>
-          <span>{stats.followers}</span>
+      <ul className={css.infoList}>
+        <li className={css.infoItem}>
+          <span className={css.label}>Followers</span>
+          <span className={css.qnt}>{stats.followers}</span>
         </li>
-        <li>
-          <span>Views</span>
-          <span>{stats.views}</span>
+        <li className={css.infoItem}>
+          <span className={css.label}>Views</span>
+          <span className={css.qnt}>{stats.views}</span>
         </li>
-        <li>
-          <span>Likes</span>
-          <span>{stats.likes}</span>
+        <li className={css.infoItem}>
+          <span className={css.label}>Likes</span>
+          <span className={css.qnt}>{stats.likes}</span>
         </li>
       </ul>
     </div>
